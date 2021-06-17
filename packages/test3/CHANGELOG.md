@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-alpha.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test3@0.2.0...@wenyt-ms/test3@0.3.0-alpha.0) (2021-06-17)
+
+
+### Features
+
+* add log on test3 ([4d30953](https://github.com/wenytang-ms-123/testavc/commit/4d30953c0baf718826779f1b6efb88bcf83f1887))
+
+
+
+
+
 # [0.2.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test3@0.2.0-rc.0...@wenyt-ms/test3@0.2.0) (2021-06-17)
 
 **Note:** Version bump only for package @wenyt-ms/test3
