@@ -5,11 +5,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "bootstrap": "lerna bootstrap"
+  },
   "bugs": {
     "url": "https://github.com/wenytang-ms-123/testavc/issues"
   },
   "homepage": "https://github.com/wenytang-ms-123/testavc#readme",
-  "dependencies": {
+  "devDependencies": {
     "lerna": "^4.0.0"
   }
 }
