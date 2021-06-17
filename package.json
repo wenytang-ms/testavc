@@ -1,0 +1,15 @@
+{
+  "name": "testavc",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wenytang-ms-123/testavc/issues"
+  },
+  "homepage": "https://github.com/wenytang-ms-123/testavc#readme",
+  "dependencies": {
+    "lerna": "^4.0.0"
+  }
+}
