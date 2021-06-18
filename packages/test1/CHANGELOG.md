@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@2.0.1...@wenyt-ms/test1@3.0.1) (2021-06-18)
+
+
+### Features
+
+* remove hello world 1 ([aa39108](https://github.com/wenytang-ms-123/testavc/commit/aa391082957b55ee0ffc9583d4491012905ecefc))
+* remove log ([e3a20b0](https://github.com/wenytang-ms-123/testavc/commit/e3a20b090a1b91e153a680e92d78b9d81628f29f))
+
+
+
+
+
+# [2.1.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@2.0.1...@wenyt-ms/test1@2.1.0) (2021-06-18)
+
+
+### Features
+
+* remove hello world 1 ([aa39108](https://github.com/wenytang-ms-123/testavc/commit/aa391082957b55ee0ffc9583d4491012905ecefc))
+* remove log ([e3a20b0](https://github.com/wenytang-ms-123/testavc/commit/e3a20b090a1b91e153a680e92d78b9d81628f29f))
+
+
+
+
+
 ## [2.0.1](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@1.2.0...@wenyt-ms/test1@2.0.1) (2021-06-18)
 
 **Note:** Version bump only for package @wenyt-ms/test1
