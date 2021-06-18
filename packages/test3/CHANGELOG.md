@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test3@1.0.11...@wenyt-ms/test3@2.0.1) (2021-06-18)
+
+**Note:** Version bump only for package @wenyt-ms/test3
+
+
+
+
+
+## [1.0.11](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test3@1.0.10...@wenyt-ms/test3@1.0.11) (2021-06-18)
+
+**Note:** Version bump only for package @wenyt-ms/test3
+
+
+
+
+
 ## [1.0.10](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test3@0.2.2-rc.0...@wenyt-ms/test3@1.0.10) (2021-06-18)
 
 **Note:** Version bump only for package @wenyt-ms/test3
