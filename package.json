@@ -6,13 +6,14 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "pc": "npm run lerna --conventional-prerelease --loglevel=silly"
   },
   "bugs": {
     "url": "https://github.com/wenytang-ms-123/testavc/issues"
   },
   "homepage": "https://github.com/wenytang-ms-123/testavc#readme",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "3.22.1"
   }
 }
