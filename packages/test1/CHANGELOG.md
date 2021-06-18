@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@3.1.0...@wenyt-ms/test1@3.2.0) (2021-06-18)
+
+
+### Features
+
+* add log on test1 ([45ed2da](https://github.com/wenytang-ms-123/testavc/commit/45ed2daf3f5d45acfa790c70cbb566874d85c8d0))
+
+
+
+
+
 # [3.1.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@3.0.2...@wenyt-ms/test1@3.1.0) (2021-06-18)
 
 
