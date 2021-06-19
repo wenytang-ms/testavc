@@ -1,0 +1,32 @@
+name: CI
+on:
+  workflow_dispatch:
+
+jobs:
+  runs-on: ubunutu-lastest
+  steps:
+    - name: Checkout dev branch
+      uses: actions/checkout@v2
+      with:
+          fetch-depth: 0
+          ref: master
+      - name: Setup node
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 14
+
+      - name: Setup npm registry
+        run: |
+          echo "${{ secrets.NPMRC }}" > ~/.npmrc
+
+      - name: Setup git
+        run: |
+          git config --global user.name 'wenytang-ms-123'
+          git config --global user.email 'wenytang@wenytang.onmicrosoft.com'
+
+      - name: Setup project
+        run: |
+          npx lerna bootstrap
+      - name: release RC npm packages to npmjs.org
+        run: |
+          npx lerna publish --conventional-prerelease --preid=rc --yes
