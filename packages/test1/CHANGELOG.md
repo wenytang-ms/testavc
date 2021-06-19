@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0-rc.1](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@5.1.0-rc.0...@wenyt-ms/test1@5.1.0-rc.1) (2021-06-19)
+
+
+### Bug Fixes
+
+* test1 ([558cd4f](https://github.com/wenytang-ms-123/testavc/commit/558cd4f986ba6770590616c4ddc155cb34b9389c))
+
+
+
+
+
 # [5.1.0-rc.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@5.0.2...@wenyt-ms/test1@5.1.0-rc.0) (2021-06-19)
 
 
