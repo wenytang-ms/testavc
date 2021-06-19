@@ -5,10 +5,11 @@ on:
 jobs:
   runs-on: ubunutu-lastest
   steps:
-    - name: Checkout dev branch
-      uses: actions/checkout@v2
-      with:
+      - name: Checkout master branch
+        uses: actions/checkout@v2
+        with:
           fetch-depth: 0
+          token: ${{ secrets.CD_PAT }}
           ref: master
       - name: Setup node
         uses: actions/setup-node@v2.1.2
