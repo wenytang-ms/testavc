@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test3@5.0.1...@wenyt-ms/test3@5.1.0) (2021-06-19)
+
+
+### Features
+
+* add log on test3 ([4d30953](https://github.com/wenytang-ms-123/testavc/commit/4d30953c0baf718826779f1b6efb88bcf83f1887))
+* Merge branch 'master' into dev ([f174c03](https://github.com/wenytang-ms-123/testavc/commit/f174c038891a1bdf29fe0dcb9f259a2253eb0563))
+
+
+
+
+
 ## [5.0.1](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test3@2.0.2...@wenyt-ms/test3@5.0.1) (2021-06-19)
 
 **Note:** Version bump only for package @wenyt-ms/test3
