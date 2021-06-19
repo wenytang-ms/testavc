@@ -1,10 +1,11 @@
-name: CI
+name: stable-CD
 on:
   workflow_dispatch:
 
 jobs:
-  runs-on: ubunutu-lastest
-  steps:
+  stable-CD:
+    runs-on: ubunutu-lastest
+    steps:
       - name: Checkout master branch
         uses: actions/checkout@v2
         with:

@@ -1,10 +1,11 @@
-name: CI
+name: DevCD
 on:
   workflow_dispatch:
 
 jobs:
-  runs-on: ubunutu-lastest
-  steps:
+  DevCD:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout dev branch
         uses: actions/checkout@v2
         with:
