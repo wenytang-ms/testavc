@@ -1,18 +1,25 @@
-name: DevCD
+name: CD
+
 on:
   workflow_dispatch:
 
 jobs:
-  DevCD:
-    name: run and build dev CD
+  cd:
     runs-on: ubuntu-latest
+
     steps:
+      - name: validate branch
+        if: ${ (github.ref != 'refs/heads/dev'}
+        run: |
+          exit 1
+
       - name: Checkout dev branch
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
           token: ${{ secrets.CD_PAT }}
           ref: dev
+
       - name: Setup node
         uses: actions/setup-node@v2.1.2
         with:
@@ -24,12 +31,19 @@ jobs:
 
       - name: Setup git
         run: |
-          git config --global user.name 'wenytang-ms-123'
-          git config --global user.email 'wenytang@wenytang.onmicrosoft.com'
+          git config --global user.name 'MSFT-yiz'
+          git config --global user.email 'yiz@microsoft.com'
 
-      - name: Setup project
+      - name: check whether vscode extension changed or not
+        id: extension-checker
         run: |
-          npx lerna bootstrap
-      - name: release alpha npm packages to npmjs.org
+          if npx lerna changed | grep 'ms-teams-vscode-extension';
+          then
+            echo "::set-output name=CHANGED::true"
+          else
+            echo "::set-output name=CHANGED::false"
+          fi
+
+      - name: release prerelease npm packages to npmjs.org
         run: |
           npx lerna publish prerelease --preid=alpha.$(git rev-parse --short HEAD) --no-git-tag-version --no-changelog --no-push --yes
