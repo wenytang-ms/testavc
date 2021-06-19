@@ -1,25 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
 name: CD
 
+# Controls when the action will run. 
 on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  # push:
+  #   branches: [ dev ]
+  # pull_request:
+  #   branches: [ dev ]
+
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  cd:
+  # This workflow contains a single job called "build"
+  CD:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: validate branch
-        if: ${ (github.ref != 'refs/heads/master'}
-        run: |
-          exit 1
-
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout master branch
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          token: ${{ secrets.CD_PAT }}
           ref: master
-
       - name: Setup node
         uses: actions/setup-node@v2.1.2
         with:
@@ -34,6 +42,9 @@ jobs:
           git config --global user.name 'wenytang-ms-123'
           git config --global user.email 'wenytang@wenytang.onmicrosoft.com'
 
+      - name: Setup project
+        run: |
+          npx lerna bootstrap
       - name: release prerelease npm packages to npmjs.org
         run: |
           npx lerna publish --conventional-graduate --yes
