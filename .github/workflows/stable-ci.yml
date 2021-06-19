@@ -4,6 +4,7 @@ on:
 
 jobs:
   stable-CD:
+    name: build and release stable relrease
     runs-on: ubunutu-lastest
     steps:
       - name: Checkout master branch

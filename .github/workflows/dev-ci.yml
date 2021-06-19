@@ -4,6 +4,7 @@ on:
 
 jobs:
   DevCD:
+    name: run and build dev CD
     runs-on: ubuntu-latest
     steps:
       - name: Checkout dev branch

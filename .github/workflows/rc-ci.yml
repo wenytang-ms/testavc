@@ -4,6 +4,7 @@ on:
 
 jobs:
   RC-CD:
+    name: run and release RC
     runs-on: ubunutu-lastest
     steps:
       - name: Checkout master branch
