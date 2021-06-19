@@ -1,3 +1,3 @@
 module.exports = "test2";
-console.log('hello world 2')
-console.log('hello world 12');
+console.log("123123312");
+console.log("123321")
