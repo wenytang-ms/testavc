@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0-alpha.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@4.4.2-alpha.600dfd9.0...@wenyt-ms/test1@5.0.0-alpha.0) (2021-06-22)
+
+
+### Features
+
+* add console log ([bac3233](https://github.com/wenytang-ms-123/testavc/commit/bac32335e255e6e4858e7bd95c5b0a5ebb50a774))
+* BREAKING CHANGE ([63ccf10](https://github.com/wenytang-ms-123/testavc/commit/63ccf10ce92f4963abca5d074763cef6b68c57b1))
+
+
+### BREAKING CHANGES
+
+* remove other logs
+
+
+
+
+
 ## [4.4.1](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@4.4.1-alpha.5c74aa9.0...@wenyt-ms/test1@4.4.1) (2021-06-22)
 
 **Note:** Version bump only for package @wenyt-ms/test1
