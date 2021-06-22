@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.1.0-alpha.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@8.0.1-alpha.0...@wenyt-ms/test1@8.1.0-alpha.0) (2021-06-22)
+
+
+### Features
+
+* test1 ([a99817a](https://github.com/wenytang-ms-123/testavc/commit/a99817adf370cc10b1fea2ff7ef99802ba012657))
+
+
+
+
+
 ## [8.0.1-alpha.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@5.1.1...@wenyt-ms/test1@8.0.1-alpha.0) (2021-06-22)
 
 **Note:** Version bump only for package @wenyt-ms/test1
