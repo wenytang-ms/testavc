@@ -7,7 +7,8 @@
   "license": "ISC",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "pc": "npm run lerna --conventional-prerelease --loglevel=silly"
+    "pc": "npm run lerna --conventional-prerelease --loglevel=silly",
+    "test": "echo test"
   },
   "bugs": {
     "url": "https://github.com/wenytang-ms-123/testavc/issues"
