@@ -28,11 +28,11 @@ jobs:
         run: |
           exit 1
 
-      - name: Checkout develop branch
+      - name: Checkout maven branch
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          ref: develop
+          ref: maven
 
       - name: Setup node
         uses: actions/setup-node@v2.1.2
@@ -55,4 +55,4 @@ jobs:
       - name: release prerelease npm packages to npmjs.org
         if: ${{ startsWith(github.event.inputs.version, 'pre') }}
         run: |
-          npx lerna publish --no-private --preid=${{github.event.inputs.preid }} --dist-tag=${{github.event.inputs.preid }} ${{ github.event.inputs.version }} --yes ${{ github.event.inputs.force }} --allow-branch develop
+          npx lerna publish --no-private --preid=${{github.event.inputs.preid }} --dist-tag=${{github.event.inputs.preid }} ${{ github.event.inputs.version }} --yes ${{ github.event.inputs.force }}
