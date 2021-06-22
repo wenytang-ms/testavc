@@ -28,7 +28,7 @@ jobs:
         run: |
           exit 1
 
-      - name: Checkout dev branch
+      - name: Checkout maven branch
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
