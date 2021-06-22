@@ -28,21 +28,11 @@ jobs:
         run: |
           exit 1
 
-      - name: Checkout dev branch
-        if: ${{ github.event_name == 'schedule' }}
+      - name: Checkout maven branch
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          token: ${{ secrets.CD_PAT }}
-          ref: develop
-
-      - name: Checkout release branch
-        if: ${{ github.event_name != 'schedule' }}
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.CD_PAT }}
-          ref: ${{ github.ref }}
+          ref: maven
 
       - name: Setup node
         uses: actions/setup-node@v2.1.2
