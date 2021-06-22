@@ -1,8 +1,8 @@
 {
     "name": "@wenyt-ms/test3",
-    "version": "4.1.7",
+    "version": "4.1.8",
     "dependencies": {
-        "@wenyt-ms/test1": "^4.5.0",
-        "@wenyt-ms/test2": "^4.2.0"
+        "@wenyt-ms/test1": "^4.5.1",
+        "@wenyt-ms/test2": "^4.2.1"
     }
 }
