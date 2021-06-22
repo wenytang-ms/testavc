@@ -45,6 +45,11 @@ jobs:
           git config --global user.email 'wenytang@wenytang.onmicrosoft.com'
 
       - name: release prerelease npm packages to npmjs.org
-        if: ${{ startsWith(github.event.inputs.version, 'pre') }}
+        if: ${{ startsWith(github.event.inputs.preid, 'rc') }}
         run: |
           npx lerna publish --conventional-prerelease --preid=${{github.event.inputs.preid }} --yes 
+
+      - name: release stable npm packages to npmjs.org
+        if: ${{ startsWith(github.event.inputs.preid, 'stable') }}
+        run: |
+          npx lerna publish --conventional-graduate --yes
