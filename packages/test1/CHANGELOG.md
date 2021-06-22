@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.2-alpha.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@3.6.1...@wenyt-ms/test1@3.6.2-alpha.0) (2021-06-22)
+
+
+### Features
+
+* **sdk:** test1' ([ebbc131](https://github.com/wenytang-ms-123/testavc/commit/ebbc13155e06d682b30abadeccdc3b53e095eee0))
+* test1 ([7861fc1](https://github.com/wenytang-ms-123/testavc/commit/7861fc15ea4566890449cf929a860ab24c70b972))
+
+
+
+
+
 ## [3.6.1](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@3.6.1-rc.1...@wenyt-ms/test1@3.6.1) (2021-06-22)
 
 **Note:** Version bump only for package @wenyt-ms/test1
