@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0-rc.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test2@4.1.2-alpha.35e6515.0...@wenyt-ms/test2@4.2.0-rc.0) (2021-06-22)
+
+
+### Features
+
+* **test2:** test2 ([e94682d](https://github.com/wenytang-ms-123/testavc/commit/e94682d1fb4a83c0e145f59f20b8151865bc28b1))
+
+
+
+
+
 ## [4.1.3-alpha.e94682d.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test2@4.1.2-alpha.35e6515.0...@wenyt-ms/test2@4.1.3-alpha.e94682d.0) (2021-06-22)
 
 
