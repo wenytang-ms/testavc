@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.6](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@4.5.5...@wenyt-ms/test1@4.5.6) (2021-06-23)
+
+
+### Bug Fixes
+
+* fix typo ([0776b28](https://github.com/wenytang-ms-123/testavc/commit/0776b28a824a1795fe0f3dc001ec5d319da96fde))
+
+
+### Features
+
+* add console log ([512bd93](https://github.com/wenytang-ms-123/testavc/commit/512bd93cf7c3793261e0769143aeeca3b7622593))
+
+
+
+
+
 ## [4.5.5](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@4.5.4...@wenyt-ms/test1@4.5.5) (2021-06-23)
 
 **Note:** Version bump only for package @wenyt-ms/test1
