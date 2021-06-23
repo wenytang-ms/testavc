@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.1-rc.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@5.0.0-alpha.1...@wenyt-ms/test1@5.0.1-rc.0) (2021-06-23)
+
+
+### Features
+
+* support prettier and config ([f4cdcfa](https://github.com/wenytang-ms-123/testavc/commit/f4cdcfa4dd1c2d53337a2305cbbcb420c564af3f))
+
+
+
+
+
 # [5.0.0-alpha.1](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@5.0.0-alpha.0...@wenyt-ms/test1@5.0.0-alpha.1) (2021-06-23)
 
 
