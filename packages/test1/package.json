@@ -1,4 +1,22 @@
 {
     "name": "@wenyt-ms/test1",
-    "version": "5.0.0-alpha.1"
+    "version": "5.0.0-alpha.1",
+    "scripts": {
+        "lint:staged": "lint-staged",
+        "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
+        "lint:fix": "eslint \"src/**/*.ts\" \"tests/**/*.ts\" --fix",
+        "precommit": "lint-staged"
+    },
+    "devDependencies": {
+        "@shared/eslint-config": "file:../eslint-config",
+        "@shared/prettier-config": "file:../prettier-config"
+    },
+    "lint-staged": {
+        "*.{js,jsx,css,ts,tsx}": [
+            "npx eslint --cache --fix --quiet"
+        ],
+        "*": [
+            "npx prettier --config .prettierrc.js --ignore-unknown --write --ignore-path .prettierignore "
+        ]
+    }
 }
