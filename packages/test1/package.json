@@ -1,6 +1,6 @@
 {
     "name": "@wenyt-ms/test1",
-    "version": "5.0.3",
+    "version": "6.0.0",
     "scripts": {
         "lint:staged": "lint-staged",
         "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
