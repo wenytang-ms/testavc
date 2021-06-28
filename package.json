@@ -9,7 +9,8 @@
     "setup": "npm install && npm run bootstrap --hoist",
     "bootstrap": "lerna bootstrap",
     "lint:staged": "lerna run lint:staged --stream",
-    "lint": "lerna run lint --stream"
+    "lint": "lerna run lint --stream",
+    "commit": "cz"
   },
   "bugs": {
     "url": "https://github.com/wenytang-ms-123/testavc/issues"
@@ -18,7 +19,8 @@
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
-    "lerna": "^4.0.0",
-    "husky": "^6.0.0"
+    "commitizen": "^4.2.4",
+    "husky": "^6.0.0",
+    "lerna": "^4.0.0"
   }
 }
