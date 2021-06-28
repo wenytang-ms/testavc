@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.1.4-alpha.73507dd.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@6.1.4-alpha.2dbe39a.0...@wenyt-ms/test1@6.1.4-alpha.73507dd.0) (2021-06-28)
+
+
+### Features
+
+* test1 add log ([73507dd](https://github.com/wenytang-ms-123/testavc/commit/73507dd4b93d3c64d53f4088fbd1629069ed21be))
+
+
+
+
+
 ## [6.1.4-alpha.2dbe39a.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@6.1.3...@wenyt-ms/test1@6.1.4-alpha.2dbe39a.0) (2021-06-28)
 
 
