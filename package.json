@@ -9,7 +9,9 @@
     "setup": "npm install && npm run bootstrap --hoist",
     "bootstrap": "lerna bootstrap",
     "lint:staged": "lerna run lint:staged --stream",
-    "lint": "lerna run lint --stream"
+    "lint": "lerna run lint --stream",
+    "version-rc": "lerna version --conventional-prerelease --preid=rc",
+    "version-stable": "lerna version --conventional-graudate"
   },
   "bugs": {
     "url": "https://github.com/wenytang-ms-123/testavc/issues"
