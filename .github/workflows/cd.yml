@@ -56,4 +56,4 @@ jobs:
         if: ${{ startsWith(github.event.inputs.version, 'pre') }}
         run: |
           npx lerna version --no-private prerelease --preid=alpha.$(git rev-parse --short HEAD) --no-push --allow-branch develop --yes
-          npx lerna publish --dist-tag=alpha --yes --allow-branch develop
+          npx lerna publish from-package --dist-tag=alpha --yes --allow-branch develop
