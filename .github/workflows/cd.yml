@@ -55,5 +55,5 @@ jobs:
       - name: release prerelease npm packages to npmjs.org
         if: ${{ startsWith(github.event.inputs.version, 'pre') }}
         run: |
-          npx lerna version --no-private prerelease --preid=alpha.$(git rev-parse --short HEAD) --no-push --allow-branch develop --yes
+          npx lerna version --no-private --conventional-prerelease --preid=alpha.$(git rev-parse --short HEAD) --no-push --allow-branch develop --yes
           npx lerna publish from-package --dist-tag=alpha --yes --allow-branch develop
