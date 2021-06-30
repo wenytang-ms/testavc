@@ -28,11 +28,11 @@ jobs:
         run: |
           exit 1
 
-      - name: Checkout maven branch
+      - name: Checkout develop branch
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          ref: maven
+          ref: develop
 
       - name: Setup node
         uses: actions/setup-node@v2.1.2
