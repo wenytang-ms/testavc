@@ -57,3 +57,8 @@ jobs:
         run: |
           npx lerna version --no-private --conventional-prerelease --preid=alpha.$(git rev-parse --short HEAD) --no-push --allow-branch develop --yes
           npx lerna publish from-package --dist-tag=alpha --yes --allow-branch develop
+      
+      - name: console log 
+        run: |
+          less package.json
+        working-directory: ./packages/test1
