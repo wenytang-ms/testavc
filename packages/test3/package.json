@@ -1,8 +1,9 @@
 {
     "name": "@wenyt-ms/test3",
-    "version": "6.8.9",
+    "version": "6.8.10",
     "dependencies": {
-        "@wenyt-ms/test1": "^6.9.0",
-        "@wenyt-ms/test2": "^6.8.1"
-    }
+        "@wenyt-ms/test1": "^6.9.1",
+        "@wenyt-ms/test2": "^6.8.2"
+    },
+    "gitHead": "112d86ffd8957f32c51878c39d2bb59e48ff3534"
 }
