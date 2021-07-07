@@ -20,5 +20,5 @@
             "npx prettier --config .prettierrc.js --ignore-unknown --write --ignore-path .prettierignore "
         ]
     },
-    "gitHead": "112d86ffd8957f32c51878c39d2bb59e48ff3534"
+    "gitHead": "d11192fb10a55176456b7deb689da69736a12364"
 }
