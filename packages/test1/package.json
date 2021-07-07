@@ -1,6 +1,7 @@
 {
     "name": "@wenyt-ms/test1",
     "version": "6.9.2-rc.0",
+    "aiKey": "123123",
     "scripts": {
         "lint:staged": "lint-staged",
         "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
