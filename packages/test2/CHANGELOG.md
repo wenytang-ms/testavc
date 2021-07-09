@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.11.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test2@6.11.0-rc.0...@wenyt-ms/test2@6.11.0) (2021-07-09)
+
+**Note:** Version bump only for package @wenyt-ms/test2
+
+
+
+
+
+# [6.11.0-rc.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test2@6.10.0...@wenyt-ms/test2@6.11.0-rc.0) (2021-07-09)
+
+
+### Features
+
+* test2 ([507a87e](https://github.com/wenytang-ms-123/testavc/commit/507a87ef864a348dddda681c3ee7a5f72b38b4ff))
+
+
+
+
+
 # [6.10.0](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test2@6.10.0-rc.0...@wenyt-ms/test2@6.10.0) (2021-07-09)
 
 **Note:** Version bump only for package @wenyt-ms/test2
