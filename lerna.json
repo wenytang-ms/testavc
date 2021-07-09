@@ -4,7 +4,7 @@
     "command":{
         "publish": {
             "message": "chore(release): publish",
-            "allowBranch": ["master", "dev"]
+            "allowBranch": ["maven", "dev"]
         }
     }
 }
