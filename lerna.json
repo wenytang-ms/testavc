@@ -1,9 +1,8 @@
 {
-    "packages": ["packages/*"],
+    "packages": ["packages/test*"],
     "version": "independent",
     "command":{
         "publish": {
-            "conventionalCommits": true,
             "message": "chore(release): publish",
             "allowBranch": ["master", "dev"]
         }
