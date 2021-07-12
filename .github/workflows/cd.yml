@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          ref: develop
+          ref: maven
 
       - name: Setup node
         uses: actions/setup-node@v2.1.2
@@ -56,3 +56,14 @@ jobs:
         if: ${{ startsWith(github.event.inputs.version, 'pre') }}
         run: |
           npx lerna publish --no-private --preid=${{github.event.inputs.preid }} --dist-tag=${{github.event.inputs.preid }} ${{ github.event.inputs.version }} --yes ${{ github.event.inputs.force }}
+
+      - name: check
+        id: check-version
+        uses: EndBug/version-check@v1
+        with: 
+          file-name: ./packages/simple/package.json
+      
+      - name: check
+        if: steps.check-version.outputs.changed == 'true'
+        run:
+          echo "321321"
