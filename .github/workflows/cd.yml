@@ -52,18 +52,12 @@ jobs:
           git config --global user.name 'wenytang-ms-123'
           git config --global user.email 'wenytang@wenytang.onmicrosoft.com'
 
+      - id: check
+        run: |
+          echo "lerna diff simple"
+
       - name: release prerelease npm packages to npmjs.org
         if: ${{ startsWith(github.event.inputs.version, 'pre') }}
         run: |
           npx lerna publish --preid=${{github.event.inputs.preid }} --dist-tag=${{github.event.inputs.preid }} ${{ github.event.inputs.version }} --yes ${{ github.event.inputs.force }}
 
-      - name: check
-        id: check-version
-        uses: EndBug/version-check@v1
-        with: 
-          file-name: ./packages/simple/package.json
-      
-      - name: check
-        if: steps.check-version.outputs.changed == 'true'
-        run:
-          echo "321321"
