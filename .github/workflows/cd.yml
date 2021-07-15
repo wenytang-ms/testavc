@@ -37,15 +37,16 @@ jobs:
           git config --global user.name 'wenytang-ms-123'
           git config --global user.email 'wenytang@wenytang.onmicrosoft.com'
 
-      - id: check
-        run: |
-          echo ${{ steps.version-release.outputs.CHANGED }}
-
       - name: release prerelease npm packages to npmjs.org
         id: version-release
         run: |
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
+
+      - name: output versoin check
+        run: |
+          echo ${{ steps.version-release.outputs.CHANGED }}
+          echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr '/' '\n')
 
       - name: check test1
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test1@') }}
