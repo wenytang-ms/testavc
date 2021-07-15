@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-rc.1](https://github.com/wenytang-ms-123/testavc/compare/simple@1.3.0-rc.0...simple@1.3.0-rc.1) (2021-07-15)
+
+
+### Features
+
+* simple ([885cfeb](https://github.com/wenytang-ms-123/testavc/commit/885cfeb181455449e9cd8e9a21e0c9e692fccf51))
+
+
+
+
+
 # [1.3.0-rc.0](https://github.com/wenytang-ms-123/testavc/compare/simple@1.2.0...simple@1.3.0-rc.0) (2021-07-15)
 
 
