@@ -41,37 +41,39 @@ jobs:
         id: version-release
         run: |
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
-          echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
-          git tag --points-at HEAD >> $VERSION_TAGS
+          # echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
+          echo 'VERSION_TAGS<<EOF' >> $GITHUB_ENV
+          git tag --points-at HEAD >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
 
       - name: output versoin check
         run: |
           echo ${{ steps.version-release.outputs.CHANGED }}
-          echo $VERSION_TAGS
+          echo ${{env.VERSION_TAGS}}
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'test1@') > ./template-tags.txt
 
       - name: check test1
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test1@') }}
         run: |
-          echo $VERSION_TAGS | grep 'test1@'
+          echo ${{env.VERSION_TAGS}} | grep 'test1@'
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'test1@')
 
       - name: check test2
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test2@') }}
         run: |
-          echo $VERSION_TAGS | grep 'test2@'
+          echo ${{env.VERSION_TAGS}} | grep 'test2@'
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'test2@')
       
       - name: check test3
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test3@') }}
         run: |
-          echo $VERSION_TAGS | grep 'test3@'
+          echo ${{env.VERSION_TAGS}} | grep 'test3@'
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'test3@')
 
       - name: check simple
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'simple@') }}
         run: |
-          echo $VERSION_TAGS | grep 'simple@'
+          echo ${{env.VERSION_TAGS}} | grep 'simple@'
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'simple@')
 
       - name: echo out
