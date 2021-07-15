@@ -51,22 +51,22 @@ jobs:
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test1@') }}
         run: |
           echo "test1"
-          echo '$(${{ steps.version-release.outputs.CHANGED }} | tr '/' '\n'| grep 'test1@')'
+          echo '${${{ steps.version-release.outputs.CHANGED }} | tr '/' '\n'| grep 'test1@'}'
 
       - name: check test2
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test2@') }}
         run: |
           echo "test2"
-          echo '$(${{ steps.version-release.outputs.CHANGED }} | tr '/' '\n'| grep 'test2@')'
+          echo '${${{ steps.version-release.outputs.CHANGED }} | tr '/' '\n'| grep 'test2@'}'
       
       - name: check test3
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test3@') }}
         run: |
           echo "test3"
-          echo '$(${{ steps.version-release.outputs.CHANGED }} | tr '/' '\n'| grep 'test3@')'
+          echo '${${{ steps.version-release.outputs.CHANGED }} | tr '/' '\n'| grep 'test3@'}'
 
       - name: check simple
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'simple@') }}
         run: |
           echo "simnple"
-          echo '$(${{ steps.version-release.outputs.CHANGED }} | tr '/' '\n'| grep 'simple@')'
+          echo '${${{ steps.version-release.outputs.CHANGED }} | tr '/' '\n'| grep 'simple@'}'
