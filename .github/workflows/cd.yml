@@ -42,38 +42,41 @@ jobs:
         run: |
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
           # echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
-          echo 'VERSION_TAGS<<EOF' >> $GITHUB_ENV
-          git tag --points-at HEAD >> $GITHUB_ENV
+      
+      - name: GITHUB ENV
+        run: |
+          echo 'JSON_RESPONSE<<EOF' >> $GITHUB_ENV
+          curl https://httpbin.org/json >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
 
       - name: output versoin check
         run: |
           echo ${{ steps.version-release.outputs.CHANGED }}
-          echo ${{env.VERSION_TAGS}}
+          echo ${{env.JSON_RESPONSE}}
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'test1@') > ./template-tags.txt
 
       - name: check test1
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test1@') }}
         run: |
-          echo ${{env.VERSION_TAGS}} | grep 'test1@'
+          echo ${{env.JSON_RESPONSE}} | grep 'test1@'
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'test1@')
 
       - name: check test2
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test2@') }}
         run: |
-          echo ${{env.VERSION_TAGS}} | grep 'test2@'
+          echo ${{env.JSON_RESPONSE}} | grep 'test2@'
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'test2@')
       
       - name: check test3
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test3@') }}
         run: |
-          echo ${{env.VERSION_TAGS}} | grep 'test3@'
+          echo ${{env.JSON_RESPONSE}} | grep 'test3@'
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'test3@')
 
       - name: check simple
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'simple@') }}
         run: |
-          echo ${{env.VERSION_TAGS}} | grep 'simple@'
+          echo ${{env.JSON_RESPONSE}} | grep 'simple@'
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n'| grep 'simple@')
 
       - name: echo out
