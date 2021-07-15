@@ -43,7 +43,6 @@ jobs:
 
       - name: release prerelease npm packages to npmjs.org
         id: version-release
-        if: ${{ startsWith(github.event.inputs.version, 'pre') }}
         run: |
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD)"
