@@ -43,7 +43,7 @@ jobs:
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
           echo 'VERSION_TAGS<<EOF' >> $GITHUB_ENV
-          git tag --points-at HEAD >> $GITHUB_ENV
+          git tag --points-at HEAD | xargs | tr ' ' '\n' >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
 
       - name: output versoin check
