@@ -47,7 +47,7 @@ jobs:
         run: |
           echo ${{ steps.version-release.outputs.CHANGED }}
           echo $(echo ${{ steps.version-release.outputs.CHANGED }} | tr ' ' '\n')
-          $(echo ${{ steps.version-change.outputs.CHANGED }} | tr ' ' '\n'| grep 'test1@') > ./template-tags.txt
+          echo $(echo ${{ steps.version-change.outputs.CHANGED }} | tr ' ' '\n'| grep 'test1@') > ./template-tags.txt
 
       - name: check test1
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test1@') }}
