@@ -3,36 +3,21 @@ name: CD
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: "which version to bump(major, minor, patch, premajor, preminor, prepatch, prerelease)"
-        required: true
-        default: "prerelease"
       preid:
         description: "preid name(alpha or rc)"
-        required: false
+        required: true
         default: "alpha"
-      force:
-        description: "force release even if no update(set --force-publish if necessary)"
-        required: false
-        default: ""
-  schedule:
-    - cron: "0 8 * * *"
 
 jobs:
   cd:
     runs-on: ubuntu-latest
 
     steps:
-      - name: validate branch
-        if: ${{ (github.ref != 'refs/heads/develop' && github.ref != 'refs/heads/maven') || (github.ref == 'refs/heads/develop' && (!startsWith(github.event.inputs.version, 'pre') || github.event.inputs.preid != 'alpha')) || (github.ref == 'refs/heads/maven' && startsWith(github.event.inputs.version, 'pre') && github.event.inputs.preid != 'rc') }}
-        run: |
-          exit 1
-
       - name: Checkout dev branch
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          ref: maven
+          ref: ${{ github.ref }}
 
       - name: Setup node
         uses: actions/setup-node@v2.1.2
@@ -57,7 +42,14 @@ jobs:
           echo "lerna diff simple"
 
       - name: release prerelease npm packages to npmjs.org
+        id: version-release
         if: ${{ startsWith(github.event.inputs.version, 'pre') }}
         run: |
-          npx lerna publish --preid=${{github.event.inputs.preid }} --dist-tag=${{github.event.inputs.preid }} ${{ github.event.inputs.version }} --yes ${{ github.event.inputs.force }}
+          npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
+          echo "::set-output name=CHANGED::$(git tag --points-at HEAD)"
+
+      - name: check
+        if: ${{ steps.version-release.outputs.CHANGED.contains("test1") }}
+        run: |
+          echo "123123"
 
