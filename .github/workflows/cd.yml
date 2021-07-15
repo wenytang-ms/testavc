@@ -39,7 +39,7 @@ jobs:
 
       - id: check
         run: |
-          echo "lerna diff simple"
+          echo ${{ steps.version-release.outputs.CHANGED }}
 
       - name: release prerelease npm packages to npmjs.org
         id: version-release
