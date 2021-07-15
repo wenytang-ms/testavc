@@ -48,7 +48,7 @@ jobs:
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD)"
 
       - name: check
-        if: ${{ steps.version-release.outputs.CHANGED.contains("test1") }}
+        if: ${{ contains(steps.version-release.outputs.CHANGED, 'test1') }}
         run: |
           echo "123123"
 
