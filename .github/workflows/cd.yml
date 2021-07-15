@@ -45,7 +45,7 @@ jobs:
         id: version-release
         run: |
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
-          echo "::set-output name=CHANGED::$(git tag --points-at HEAD)"
+          echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
 
       - name: check test1
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test1') }}
