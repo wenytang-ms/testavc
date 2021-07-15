@@ -46,27 +46,27 @@ jobs:
       - name: output versoin check
         run: |
           echo ${{ steps.version-release.outputs.CHANGED }}
-          tr ' ' '\n' <<< ${{ steps.version-release.outputs.CHANGED }} > ./template-tags.txt
+          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' > ./template-tags.txt
 
       - name: check test1
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test1@') }}
         run: |
-          tr ' ' '\n' <<< ${{ steps.version-release.outputs.CHANGED }} | grep 'test1@'
+          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' | grep 'test1@'
 
       - name: check test2
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test2@') }}
         run: |
-          tr ' ' '\n' <<< ${{ steps.version-release.outputs.CHANGED }} | grep 'test2@')
+          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' | grep 'test2@')
       
       - name: check test3
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'test3@') }}
         run: |
-          tr ' ' '\n' <<< ${{ steps.version-release.outputs.CHANGED }} | grep 'test3@')
+          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' | grep 'test3@')
 
       - name: check simple
         if: ${{ contains(steps.version-release.outputs.CHANGED, 'simple@') }}
         run: |
-          tr ' ' '\n' <<< ${{ steps.version-release.outputs.CHANGED }} | grep 'simple@')
+          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' | grep 'simple@')
 
       - name: output
         run: |
