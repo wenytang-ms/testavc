@@ -48,6 +48,17 @@ jobs:
           echo ${{ steps.version-change.outputs.CHANGED }}
           tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' > ./template-tags.txt
 
+      - name: Update Template Tag list Release
+        if: ${{ contains(steps.version-change.outputs.CHANGED, 'test1@') }}
+        uses: ncipollo/release-action@v1.7.3
+        with:
+          artifacts: ./packages/test1/*.zip
+          name: 'Test1 Tag List'
+          body: 'Release to maintain template tag list.'
+          token: ${{ secrets.github_token }}
+          tag: '$(tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'templates@')'
+          allowUpdates: true  
+
       - name: check test1
         if: ${{ contains(steps.version-change.outputs.CHANGED, 'test1@') }}
         run: |
