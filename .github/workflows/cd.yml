@@ -38,35 +38,35 @@ jobs:
           git config --global user.email 'wenytang@wenytang.onmicrosoft.com'
 
       - name: release prerelease npm packages to npmjs.org
-        id: version-release
+        id: version-change
         run: |
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
 
       - name: output versoin check
         run: |
-          echo ${{ steps.version-release.outputs.CHANGED }}
-          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' > ./template-tags.txt
+          echo ${{ steps.version-change.outputs.CHANGED }}
+          tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' > ./template-tags.txt
 
       - name: check test1
-        if: ${{ contains(steps.version-release.outputs.CHANGED, 'test1@') }}
+        if: ${{ contains(steps.version-change.outputs.CHANGED, 'templates@') }}
         run: |
-          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' | grep 'test1@'
+          tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'test1@'
 
       - name: check test2
-        if: ${{ contains(steps.version-release.outputs.CHANGED, 'test2@') }}
+        if: ${{ contains(steps.version-change.outputs.CHANGED, 'test2@') }}
         run: |
-          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' | grep 'test2@')
+          tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'test2@'
       
       - name: check test3
-        if: ${{ contains(steps.version-release.outputs.CHANGED, 'test3@') }}
+        if: ${{ contains(steps.version-change.outputs.CHANGED, 'test3@') }}
         run: |
-          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' | grep 'test3@')
+          tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'test3@'
 
       - name: check simple
-        if: ${{ contains(steps.version-release.outputs.CHANGED, 'simple@') }}
+        if: ${{ contains(steps.version-change.outputs.CHANGED, 'simple@') }}
         run: |
-          tr ' ' '\n' <<< '${{ steps.version-release.outputs.CHANGED }}' | grep 'simple@')
+          tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'simple@'
 
       - name: output
         run: |
