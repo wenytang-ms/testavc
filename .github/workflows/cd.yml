@@ -56,7 +56,7 @@ jobs:
           name: 'Test1 Tag List'
           body: 'Release to maintain template tag list.'
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: '$(tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'templates@')'
+          tag: '@wenyt-ms/test1@6.17.0-rc.11'
           allowUpdates: true  
 
       - name: check test1
