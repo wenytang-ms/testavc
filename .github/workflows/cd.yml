@@ -43,6 +43,11 @@ jobs:
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
           echo "::set-output name=TEST1_VERSION::$(git tag --points-at HEAD | grep test1)"
+          var = $(git tag --points-at HEAD | grep test2 | grep rc)
+          if var;
+          then
+            git push -d origin var
+          fi
 
       - name: output versoin check
         run: |
