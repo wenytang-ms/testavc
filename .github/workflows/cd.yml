@@ -55,7 +55,7 @@ jobs:
           artifacts: ./packages/test1/*.zip
           name: 'Test1 Tag List'
           body: 'Release to maintain template tag list.'
-          token: ${{ secrets.github_token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag: '$(tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'templates@')'
           allowUpdates: true  
 
