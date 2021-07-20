@@ -37,7 +37,6 @@ jobs:
         run: |
           dotnet restore
           dotnet build --configuration Release --no-restore
-          ll
         working-directory: ./packages/simpleauth
       
       - name: Setup project
@@ -55,6 +54,7 @@ jobs:
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
           echo "::set-output name=TEST1_VERSION::$(git tag --points-at HEAD | grep test1)"
+          echo "::set-output name=SIMPLE_VERSOIN::$(git tag --points-at HEAD | grep simpleauth)"
           VAR=$(git tag --points-at HEAD | grep test2 | grep rc)
           if [ ! -z "$VAR" ]
           then
@@ -100,3 +100,19 @@ jobs:
       - name: output
         run: |
           less ./template-tags.txt
+
+      - name: Zip dotnet
+        uses: papeloto/action-zip@v1
+        with:
+          files: ./packages/simpleauth/src/TeamsFxSimpleAuth/bin/Release/netcoreapp3.1
+          dest: ./Microsoft.TeamsFx.SimpleAuth_${{ steps.version-change.outputs.SIMPLE_VERSOIN }}.zip
+      
+      - name: Release SimpleAuth to GitHub
+        uses: ncipollo/release-action@v1.7.3
+        with:
+          artifacts: ./Microsoft.TeamsFx.SimpleAuth_${{ steps.version-change.outputs.SIMPLE_VERSOIN }}.zip
+          name: 'SimpleAuth Release'
+          body: 'Release SimpleAuth to GitHub Release page.'
+          token: ${{ secrets.github_token }}
+          tag: ${{ steps.version-change.outputs.SIMPLE_VERSOIN }}
+          allowUpdates: true  
