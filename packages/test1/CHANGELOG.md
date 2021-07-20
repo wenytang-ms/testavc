@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.17.0-rc.18](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@6.17.0-rc.17...@wenyt-ms/test1@6.17.0-rc.18) (2021-07-20)
+
+
+### Bug Fixes
+
+* test1 ([06131e2](https://github.com/wenytang-ms-123/testavc/commit/06131e20434ddbcf23d08adf8bb3389262989df7))
+
+
+
+
+
 # [6.17.0-rc.17](https://github.com/wenytang-ms-123/testavc/compare/@wenyt-ms/test1@6.17.0-rc.16...@wenyt-ms/test1@6.17.0-rc.17) (2021-07-20)
 
 **Note:** Version bump only for package @wenyt-ms/test1
