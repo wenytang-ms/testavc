@@ -49,21 +49,20 @@ jobs:
           git config --global user.email 'wenytang@wenytang.onmicrosoft.com'
 
       - name: release prerelease npm packages to npmjs.org
-        id: version-change
         run: |
           npx lerna version --conventional-commits --conventional-prerelease --preid=${{github.event.inputs.preid }}  --yes
+
+      - name: output versoin check
+        id: version-change
+        run: |
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
           echo "::set-output name=TEST1_VERSION::$(git tag --points-at HEAD | grep test1)"
           echo "::set-output name=SIMPLE_VERSOIN::$(git tag --points-at HEAD | grep simpleauth | awk -F '@' '{print$2}')"
           VAR=$(git tag --points-at HEAD | grep test2 | grep rc)
-          if [ ! -z "$VAR" ]
+          if [ ! -z $VAR ]
           then
               git push -d origin $VAR
           fi
-
-      - name: output versoin check
-        run: |
-          echo ${{ steps.version-change.outputs.CHANGED }}
           tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' > ./template-tags.txt
 
       - name: Update Template Tag list Release
