@@ -58,10 +58,10 @@ jobs:
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
           echo "::set-output name=TEST1_VERSION::$(git tag --points-at HEAD | grep test1)"
           echo "::set-output name=SIMPLE_VERSOIN::$(git tag --points-at HEAD | grep simpleauth | awk -F '@' '{print$2}')"
-          VAR=$(git tag --points-at HEAD | grep test2 | grep rc) \
-          if [ ! -z $VAR ]; \
-          then \
-              git push -d origin $VAR \
+          VAR=$(git tag --points-at HEAD | grep test2 | grep rc)
+          if [ ! -z $(git tag --points-at HEAD | grep test2 | grep rc) ];
+          then
+              git push -d origin $(git tag --points-at HEAD | grep test2 | grep rc)
           fi 
           tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' > ./template-tags.txt
 
