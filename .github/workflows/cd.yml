@@ -58,12 +58,10 @@ jobs:
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
           echo "::set-output name=TEST1_VERSION::$(git tag --points-at HEAD | grep test1)"
           echo "::set-output name=SIMPLE_VERSOIN::$(git tag --points-at HEAD | grep simpleauth | awk -F '@' '{print$2}')"
-          VAR=$(git tag --points-at HEAD | grep test2 | grep rc)
-          if [ ! -z $(git tag --points-at HEAD | grep test2 | grep rc) ];
+          if git tag --points-at HEAD | grep test2 | grep rc;
           then
               git push -d origin $(git tag --points-at HEAD | grep test2 | grep rc)
           fi 
-          tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' > ./template-tags.txt
 
       - name: Update Template Tag list Release
         if: ${{ contains(steps.version-change.outputs.CHANGED, 'test1@') }}
@@ -95,10 +93,6 @@ jobs:
         if: ${{ contains(steps.version-change.outputs.CHANGED, 'simple@') }}
         run: |
           tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'simple@'
-
-      - name: output
-        run: |
-          less ./template-tags.txt
 
       - name: Zip dotnet
         uses: papeloto/action-zip@v1
