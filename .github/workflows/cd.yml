@@ -27,6 +27,18 @@ jobs:
       - name: Setup npm registry
         run: |
           echo "${{ secrets.NPMRC }}" > ~/.npmrc
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: 3.1.x
+
+      - name: Build SimpleAuth
+        run: |
+          dotnet restore
+          dotnet build --configuration Release --no-restore
+          ll
+        working-directory: ./packages/simpleauth
       
       - name: Setup project
         run: |
