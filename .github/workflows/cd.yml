@@ -55,11 +55,6 @@ jobs:
           echo "::set-output name=CHANGED::$(git tag --points-at HEAD | xargs)"
           echo "::set-output name=TEST1_VERSION::$(git tag --points-at HEAD | grep test1)"
           echo "::set-output name=SIMPLE_VERSOIN::$(git tag --points-at HEAD | grep simpleauth)"
-          VAR=$(git tag --points-at HEAD | grep test2 | grep rc)
-          if [ ! -z "$VAR" ]
-          then
-              echo $VAR
-          fi
 
       - name: output versoin check
         run: |
