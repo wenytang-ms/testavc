@@ -75,7 +75,7 @@ jobs:
           allowUpdates: true  
 
       - name: check test1
-        if: ${{ contains(steps.version-change.outputs.CHANGED, 'test1@') }}
+        needs: ${{ steps.version-change.outputs.TEST1_VERSION }}
         run: |
           tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'test1@'
 
