@@ -68,7 +68,7 @@ jobs:
         uses: ncipollo/release-action@v1.7.3
         with:
           artifacts: ./packages/test1/*.zip
-          name: 'release for ${{ steps.version-change.outputs.TEST1_VERSION }}'
+          name: `release for $(tr ' ' '\n' <<< '${{ steps.version-change.outputs.CHANGED }}' | grep 'test1@')`
           body: 'Release to maintain template tag list.'
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ steps.version-change.outputs.TEST1_VERSION }}
