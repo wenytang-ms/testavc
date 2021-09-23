@@ -42,7 +42,7 @@ jobs:
         if: ${{ github.event.pull_request.head.repo.full_name != 'OfficeDev/TeamsFx' }}
         run: |
           git remote -v
-          git remote add origin https://github.com/wenytang-ms-123/testavc.git
+          git remote add upstream https://github.com/wenytang-ms-123/testavc.git
           git remote -v
           git fetch upstream ${{ github.event.pull_request.base.ref }}
           VAR=$(realpath .github/scripts/lint-pr.sh)
