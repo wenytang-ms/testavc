@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup project
         run: |
@@ -68,4 +68,3 @@ jobs:
             2. npx lerna exec – bash $VAR ${your-PR-target-branch}"
             exit 1
           fi
-    
