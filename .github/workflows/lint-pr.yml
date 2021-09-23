@@ -47,6 +47,7 @@ jobs:
         run: |
           git remote add -f b https://github.com/OfficeDev/TeamsFx.git
           git remote update
+          git fetch upstream ${{ github.event.pull_request.base.ref }}
           VAR=$(realpath .github/scripts/lint-pr.sh)
           npx lerna exec -- bash $VAR upstream/${{ github.event.pull_request.base.ref }}
 
