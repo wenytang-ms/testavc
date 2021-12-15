@@ -44,10 +44,5 @@
     "Twitter OAuth": "[t|T][w|W][i|I][t|T][t|T][e|E][r|R].*['|\"][0-9a-zA-Z]{35,44}['|\"]",
     "Github OAuth": " [A-Za-z0-9_]{255}",
     "test": "[A-Za-z0-9_]{16,}$",
-    "Common 32bit": "[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}",
-    "Minimum eight characters": "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8}$",
-    "Minimum eight characters 2": "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$",
-    "Minimum eight characters 3": "^(?=.*[a-z])(?=.*[A-Z])(?=.*0-9)[a-zA-Z0-9]{8,}$",
-    "Minimum eight characters 4": "^(?=.*[a-z])(?=.*[A-Z])(?=.*0-9)(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,}$", 
-    "Minimum ten characters": "^(?=.*[a-z])(?=.*[A-Z])(?=.*0-9)(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,10}$"
+    "common": "(?=^.{8,255}$)(?=^[^\\s]*$)(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])"
     }
