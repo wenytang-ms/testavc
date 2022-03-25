@@ -1,0 +1,42 @@
+name: CA
+
+on:
+  workflow_dispatch:
+    inputs:
+      update-tag:
+        description: "update tag or bump up tag"
+        required: true
+        default: "false"
+jobs:
+  ca:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate CD branch
+        if: ${{ github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/release' }}
+        run: |
+          echo It's not allowed to run CD on other branch except release.
+          exit 1
+      
+      - uses: actions/checkout@v2
+
+      - name: fetch latest tag
+        uses: actions-ecosystem/action-get-latest-tag@v1
+        id: get-latest-tag
+      
+      - name: update tag
+        uses: richardsimko/update-tag@v1
+        if: ${{ github.event.inputs.update-tag == 'false' }}
+        with:
+          tag_name: ${{ steps.get-latest-tag.outputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.CD_PAT }}
+
+      - name: Bump version and push tag
+        if: ${{ github.event.inputs.update-tag != 'false' }}
+        uses: anothrNick/github-tag-action@1.26.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          RELEASE_BRANCHES: release
+          INITIAL_VERSION: ${{ steps.get-latest-tag.outputs.tag }}
+          
