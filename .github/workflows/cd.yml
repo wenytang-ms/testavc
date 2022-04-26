@@ -15,6 +15,11 @@ on:
         description: "force release even if no update(set --force-publish if necessary)"
         required: false
         default: ""
+      pkgs:
+        type: string
+        description: "definle which pkgs to release, input string",
+        required: false
+        default: ""
   schedule:
     - cron: "0 8 * * *"
 
@@ -43,21 +48,16 @@ jobs:
         run: |
           echo "${{ secrets.NPMRC }}" > ~/.npmrc
       
+      - name: manage packages
+        if: ${{  github.event_name == 'workflow_dispatch' && github.event.inputs.pkgs }}
+        run: |
+          bash .github/scripts/lerna.sh ${{ github.event.inputs.pkgs }}
+      
       - name: Setup project
         run: |
-          npm run setup
+          cat lerna.json
 
       - name: Setup git
         run: |
           git config --global user.name 'wenytang-ms-123'
           git config --global user.email 'wenytang@wenytang.onmicrosoft.com'
-
-      - id: check
-        run: |
-          echo "lerna diff simple"
-
-      - name: release prerelease npm packages to npmjs.org
-        if: ${{ startsWith(github.event.inputs.version, 'pre') }}
-        run: |
-          npx lerna publish --preid=${{github.event.inputs.preid }} --dist-tag=${{github.event.inputs.preid }} ${{ github.event.inputs.version }} --yes ${{ github.event.inputs.force }}
-
