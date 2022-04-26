@@ -15,11 +15,10 @@ on:
         description: "force release even if no update(set --force-publish if necessary)"
         required: false
         default: ""
-      pkgs:
+      pkgsToManage:
+        description: 'which pkgs need to be managed'
+        required: false 
         type: string
-        description: "definle which pkgs to release, input string",
-        required: false
-        default: ""
   schedule:
     - cron: "0 8 * * *"
 
@@ -49,9 +48,9 @@ jobs:
           echo "${{ secrets.NPMRC }}" > ~/.npmrc
       
       - name: manage packages
-        if: ${{  github.event_name == 'workflow_dispatch' && github.event.inputs.pkgs }}
+        if: ${{  github.event_name == 'workflow_dispatch' && github.event.inputs.pkgsToManage }}
         run: |
-          bash .github/scripts/lerna.sh ${{ github.event.inputs.pkgs }}
+          bash .github/scripts/lerna.sh ${{ github.event.inputs.pkgsToManage }}
       
       - name: Setup project
         run: |
