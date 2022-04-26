@@ -18,7 +18,6 @@ on:
       pkgsToManage:
         description: 'which pkgs need to be managed'
         required: false 
-        type: string
   schedule:
     - cron: "0 8 * * *"
 
