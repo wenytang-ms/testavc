@@ -1,0 +1,22 @@
+{
+    "common": [
+        "packages/eslint-config"
+    ],
+    "test1": [
+        "packages/test1"
+    ],
+    "test2": [
+        "packages/test2"
+    ],
+    "test3": [
+        "packages/test1",
+        "packages/test2"
+    ],
+    "simple": [
+        "packages/simple"
+    ],
+    "all": [
+        "packages/test*",
+        "packages/simple"
+    ]
+}
